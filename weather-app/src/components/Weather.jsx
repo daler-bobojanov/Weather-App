@@ -18,6 +18,8 @@ class Weather extends React.Component {
                 {this.props.description && <p>Conditions: {this.props.description}</p>}
 
                 {this.props.icon && <img src={this.props.icon} alt=""></img>}
+
+                {this.props.error && <p>{this.props.error}</p>}
             </div >
         );
     }
