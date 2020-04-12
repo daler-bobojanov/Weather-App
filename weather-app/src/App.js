@@ -72,6 +72,17 @@ class App extends React.Component {
 
         } catch (e) {
             console.error(e);
+            this.setState({
+                date: [],
+                temperature: [],
+                feels_like: [],
+                humidity: [],
+                description: [],
+                icon: [],
+                city: undefined,
+                country: undefined,
+                error: "City/Zip Code and Country search values must be entered. Or, check for typos.."
+            });
         }
     }
 
