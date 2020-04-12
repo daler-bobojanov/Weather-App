@@ -5,6 +5,13 @@ import Titles from './components/Titles';
 import Form from './components/Form';
 import Weather from './components/Weather';
 
+/*
+Pseudocode:
+* Create components;
+* Create Wireframe;
+* Obtain and hide API key;
+* install axios;
+*/
 
 const _api_key = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
@@ -35,14 +42,13 @@ class App extends React.Component {
 
             console.log(api_call.data.list);
 
-            let dateList = api_call.data.list.map((date) => [date.dt_txt]);
-
+            const dateList = api_call.data.list.map((date) => [date.dt_txt]);
             // * Attempt to convert time to normal readable format. *
             /*
-            let dateList = api_call.data.list.map((date) => [date.dt]);
-            const newDateList = dateList.map((newDate, i) => new Date(newDate[i] * 1000));
-            console.log(newDateList, 'NEW DATE')
-            */
+            const dateList = api_call.data.list.map((date) => [date.dt]);
+            const newDateList = dateList.map((newDate) => new Date(newDate * 1000));
+            console.log(dateList, 'NEW DATE');
+           */
             const tempList = api_call.data.list.map((temp) => [temp.main.temp]);
             const feelsLikeList = api_call.data.list.map((feelsLike) => [feelsLike.main.feels_like]);
             const humidityList = api_call.data.list.map((humidity) => [humidity.main.humidity]);
@@ -110,10 +116,3 @@ class App extends React.Component {
 
 export default App;
 
-/*
-Pseudocode:
-* Create components;
-* Create Wireframe;
-* Obtain and hide API key;
-* install axios;
-*/
