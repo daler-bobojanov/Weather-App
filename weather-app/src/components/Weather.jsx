@@ -1,28 +1,24 @@
 import React from 'react';
 
-class Weather extends React.Component {
-    render() {
-        return (
-            // <div>Weather Component</div>
-            <div>
-                {this.props.city && this.props.country && <p>Location: {this.props.city}, {this.props.country}</p>}
+const Weather = props => (
+    // <div>Weather Component</div>
+    <div>
+        {props.city && props.country && <p>Location: {props.city}, {props.country}</p>}
 
-                {this.props.date && <p>Date: {this.props.date}</p>}
+        {props.date && <p>Date: {props.date}</p>}
 
-                {this.props.temperature && <p>Temperature: {this.props.temperature}℉</p>}
+        {props.temperature && <p>Temperature: {props.temperature}℉</p>}
 
-                {this.props.feels_like && <p>Feels Like: {this.props.feels_like}℉</p>}
+        {props.feels_like && <p>Feels Like: {props.feels_like}℉</p>}
 
-                {this.props.humidity && <p>Humidity: {this.props.humidity}%</p>}
+        {props.humidity && <p>Humidity: {props.humidity}%</p>}
 
-                {this.props.description && <p>Conditions: {this.props.description}</p>}
+        {props.description && <p>Conditions: {props.description}</p>}
 
-                {this.props.icon && <img src={this.props.icon} alt=""></img>}
+        {props.icon && <img src={props.icon} alt=""></img>}
 
-                {this.props.error && <p>{this.props.error}</p>}
-            </div >
-        );
-    }
-}
+        {props.error && <p>{props.error}</p>}
+    </div >
+);
 
 export default Weather;
