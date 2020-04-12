@@ -1,16 +1,19 @@
 import React from 'react';
 import axios from 'axios';
 
+
 import Titles from './components/Titles';
 import Form from './components/Form';
 import Weather from './components/Weather';
 
 /*
 Pseudocode:
-* Create components;
 * Create Wireframe;
+* Create components;
 * Obtain and hide API key;
 * install axios;
+* render components;
+* Add styling;
 */
 
 const _api_key = process.env.REACT_APP_OPENWEATHER_API_KEY;
@@ -95,20 +98,32 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Titles />
-                <Form getWeather={this.getWeather} />
-                <Weather
-                    date={this.state.date[0]}
-                    temperature={this.state.temperature[0]}
-                    feels_like={this.state.feels_like[0]}
-                    humidity={this.state.humidity[0]}
-                    description={this.state.description[0]}
-                    icon={`http://openweathermap.org/img/wn/${this.state.icon[0]}@2x.png`}
-                    city={this.state.city}
-                    country={this.state.country}
-                    error={this.state.error}
+                <div className="wrapper">
+                    <div className="main">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-xs-5 title-container">
+                                    <Titles />
+                                </div>
+                                <div className="col-xs-7 form-container">
+                                    <Form getWeather={this.getWeather} />
+                                    <Weather
+                                        date={this.state.date[0]}
+                                        temperature={this.state.temperature[0]}
+                                        feels_like={this.state.feels_like[0]}
+                                        humidity={this.state.humidity[0]}
+                                        description={this.state.description[0]}
+                                        icon={`http://openweathermap.org/img/wn/${this.state.icon[0]}@2x.png`}
+                                        city={this.state.city}
+                                        country={this.state.country}
+                                        error={this.state.error}
 
-                />
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
